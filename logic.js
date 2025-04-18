@@ -27,3 +27,15 @@ function mostrar_tudo(){
     draw_screen.style.display = 'block';
     prog_screen.style.display = 'block';
 }
+
+function mexer_disco(){
+    disc = document.querySelector('.disco');
+    // disc.style.display = "none";
+    disc.id = "disc"
+}
+function parar_disco(){
+    disc = document.querySelector('.disco');
+    disc.id = "disc_pausa"
+    
+    // disc.style.display = "none";
+}
