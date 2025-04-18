@@ -4,70 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="logic.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>SITE DO RICHALISON</h1>
-    <section class="box">
-        <h2>siglas boys</h2>
-        <p>Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quae facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
-    
-        <!-- <h2>siglas boys</h2> -->
-        <p>Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quae davi brito facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
-    
-        <img src= "https://bettysgraphics.neocities.org/images/plants/flower%20195.gif" class="stickers">
-        <img src= "https://bettysgraphics.neocities.org/images/objects/art%2024.gif" class="stickers">
-        <img src= "https://bettysgraphics.neocities.org/images/plants/flower%2013.gif" class="stickers">
-        
-    </section>
-    <section class="box">
-        <div class="text_stikers">
-            <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers_f">
-            <h2>DESENHOS BICHAS</h2>
-            <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers">
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. sigma boy Quae facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
-        <section class="gride">
-            
-            <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GEkPKyyXsAAhOB3?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GLJR2JqXQAAb31Q?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
-            <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
-            <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
-            <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
-            
-        </section>
-
-        <h2>FELIPE NETO TE AMA</h2>
-    </section>
-    <section class="box">
-        <div class="text_stikers">
-            <img src= "https://bettysgraphics.neocities.org/images/objects/lipstick.gif" class="stickers">
-            <h2>PROGRAMAS😘</h2>
-            <img src= "https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif" class="stickers_f">
-        </div>
-            <p>Lorem ipsum dolor sit,
-             amet consectetur adipisicing elit. Eligendi 
-             quisquam eius temporibus totam qui nemo
-              labore ullam nam consequuntur esse perferendis,
-               cupiditate voluptas itaque natus, fugit
-                nesciunt? Veritatis, aliquam omnis Lorem ipsum dolor 
-                sit amet consectetur adipisicing elit. Vero, unde 
-                asperiores. Est perspiciatis, nemo amet eius veritatis beatae 
-                fugiat fugit? Temporibus, accusantium recusandae exercitationem 
-                repellat assumenda suscipit saepe possimus consequuntur.
-            .</p>
+    <section class="main_box">
+        <header>
+            <h1>SITE DO RICHALISON</h1>
             <p>
-                temos programas em pintons69, c#
-            .</p>
+                Lorem ipsum dolor sit amet 
+                consectetur adipisicing elit.  
+            </p>
+            <nav>
+                <a onclick="mostrar_tudo()" >MOSTRAR TUDO</a>
+                <a onclick="clicke('sobre_s')">SOBRE</a>
+                <a onclick="clicke('draw_s')" >DESENHOS BICHAS</a>
+                <a onclick="clicke('prog_s')">PROGRAMAS😘</a>
+                <!-- <a onclick="clicke('sobre_s')" id="sobre_b">LA ELE</a> -->
+                
+            </nav>
+        </header>
+        <div class="info">
+            <section class="box" id="sobre_s">
+                <h2>siglas boys</h2>
+                <p>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quae facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
+            
+                <!-- <h2>siglas boys</h2> -->
+                <p>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Quae davi brito facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
+            
+                <img src= "https://bettysgraphics.neocities.org/images/plants/flower%20195.gif" class="stickers">
+                <img src= "https://bettysgraphics.neocities.org/images/objects/art%2024.gif" class="stickers">
+                <img src= "https://bettysgraphics.neocities.org/images/plants/flower%2013.gif" class="stickers">
+                
+            </section>
+            <section class="box" id="draw_s">
+                <div class="text_stikers">
+                    <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers_f">
+                    <h2>DESENHOS BICHAS</h2>
+                    <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. sigma boy Quae facere at numquam earum nesciunt rem illo laudantium eligendi dolorum. A.</p>
+                <section class="gride">
+                    
+                    <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GEkPKyyXsAAhOB3?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GLJR2JqXQAAb31Q?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GfMgud8WgAE6w4y?format=jpg&name=large" >
+                    <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
+                    <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
+                    <img src="https://pbs.twimg.com/media/GezH6utXMAAjATQ?format=jpg&name=900x900" >
+                    
+                </section>
+
+                <h2>FELIPE NETO TE AMA</h2>
+            </section>
+            <section class="box" id="prog_s">
+                <div class="text_stikers">
+                    <img src= "https://bettysgraphics.neocities.org/images/objects/lipstick.gif" class="stickers">
+                    <h2>PROGRAMAS😘</h2>
+                    <img src= "https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif" class="stickers_f">
+                </div>
+                    <p>Lorem ipsum dolor sit,
+                    amet consectetur adipisicing elit. Eligendi 
+                    quisquam eius temporibus totam qui nemo
+                    labore ullam nam consequuntur esse perferendis,
+                    cupiditate voluptas itaque natus, fugit
+                        nesciunt? Veritatis, aliquam omnis Lorem ipsum dolor 
+                        sit amet consectetur adipisicing elit. Vero, unde 
+                        asperiores. Est perspiciatis, nemo amet eius veritatis beatae 
+                        fugiat fugit? Temporibus, accusantium recusandae exercitationem 
+                        repellat assumenda suscipit saepe possimus consequuntur.
+                    .</p>
+                    <p>
+                        temos programas em pintons69, c#
+                    .</p>
+            </section>
+        </div>
     </section>
-    
 </body>
 </html>
 
