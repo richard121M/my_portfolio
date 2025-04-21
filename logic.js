@@ -14,28 +14,21 @@ function test(){
     alert("asasas")
 }
 function clicke(namo){
-    // setInterval(() => {
-    //     alert("sdasfaaaaaaaaaiiii mei")
-    //   }, 5000);
-    
-    // alert("dddd")
+
     var sobre_screen = document.getElementById("sobre_s")
     var draw_screen = document.getElementById("draw_s")
     var prog_screen = document.getElementById("prog_s")
 
-    // prog_screena.id = "ssssssasa"
-
     sobre_screen.style.display = 'none';
     draw_screen.style.display = 'none';
     prog_screen.style.display = 'none';
-    // elemente_load(namo)
-    // ona(namo)
+
     if(document.getElementById(namo).style.display === 'block'){
         document.getElementById(namo).style.display = 'none';
     }else{
         setTimeout(() => {
             document.getElementById(namo).style.display = 'block';
-        }, 100);
+        }, 150);
     }
 }
 function mostrar_tudo(){
@@ -53,7 +46,7 @@ function mostrar_tudo(){
         prog_screen.style.display = 'block';
         
         
-    }, 100); //1000
+    }, 150); //1000
     
 }
 
