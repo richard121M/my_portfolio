@@ -4,53 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="logic.js"></script>
+    <script src="logic.js" ></script>
+    
     <title>Document</title>
 </head>
 <body>
+    <section class="box_title">
+        <div class="area_remove">
+            <a class="b_esconder" onclick="esconder_header()" id="prog_">≡</a>
+        </div>
+        <h1 id="meuTitulo">RICHALISON PLAYS</h1>
+        <h1></h1>
+    </section>
     <section class="main_box">
-        <header>
+        
+        <header id="cabesario">
             <!-- dsdsd -->
             <section class="box">
-                <h1>RICHALISON PLAYS</h1>
+                <!-- <h1>RICHALISON PLAYS</h1> -->
                 <nav>
-                    <a onclick="mostrar_tudo()" id="prog_">MOSTRAR TUDO</a>
-                <a onclick="clicke('sobre_s')">SOBRE</a>
-                <a onclick="clicke('draw_s')" >DESENHOS BICHAS</a>
-                <a onclick="clicke('prog_s')">PROGRAMAS😘</a>
-                <!-- <a onclick="clicke('sobre_s')" id="sobre_b">LA ELE</a> -->
-                
-            </nav>
+                    <!-- <a class="botao" onclick="mostrar_tudo()" id="prog_">MOSTRAR TUDO</a> -->
+                    <a class="botao" onclick="clicke('sobre_s')">SOBRE</a>
+                    <!-- <a class="botao" onclick="mudar_texto('gay')">SOBRE</a> -->
+                    <a class="botao" onclick="clicke('draw_s')" >DESENHOS BICHAS</a>
+                    <a class="botao" onclick="clicke('prog_s')">PROGRAMAS😘</a>
+                    <!-- <a onclick="clicke('sobre_s')" id="sobre_b">LA ELE</a> -->
+                    
+                </nav>
             </section>
             
             <section class="box">
                 <div class="text_stikers">
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/snoopy%2012.gif" class="stickers">
                     <p>MANUTENCAO</p>
-                    
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/garfield%2029.gif" class="stickers">
-                </div>
+                    <!-- <a href="https://info.flagcounter.com/LCVD">site</a> -->
+                    <!-- <img src="https://s01.flagcounter.com/map/LCVD/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/" alt="Flag Counter" border="0"> -->
+                </div> 
             </section>
             <section class="box">
-                MUSIC
-                <br>
+                MUSICA
+                <br><br>
                 musica do gato de miguel
                 <div class="music_local">
-                    <audio onplaying="mexer_disco()" onpause="parar_disco()" src="https://cdn1.suno.ai/0b7b3e37-d042-4edc-aed6-1cd386d797b9.mp3" controls >sss</audio>
+                    <!-- <button id="playPauseB" onclick="pause_music()">▶</button> -->
+                    <!-- <input type="range" ontimeupdate="atulizar_tempomusic()" id="rang_music"></input> -->
+                    <audio id="audio_tag" ontimeupdate="sicronizabar()" src="https://cdn1.suno.ai/0b7b3e37-d042-4edc-aed6-1cd386d797b9.mp3" >sss</audio>
                     <!-- <img src="https://pbs.twimg.com/media/GpBK02JWsAA0z01?format=jpg&name=4096x4096" alt="" class="disco" id="disc_pausa"> -->
-                    <img src="https://pbs.twimg.com/media/GJzgjpBXMAA1X5X?format=jpg&name=small" alt="" class="disco" id="disc_pausa">
+                    <img src="https://pbs.twimg.com/media/GJzgjpBXMAA1X5X?format=jpg&name=small" onclick="pause_music()"  alt="" class="disco" id="disc">
+                    
+                    <input type="range" min="1" max="100" value="1" class="timermusic" onchange="mudar_tempo()">
+                    
                 </div>
             </section>
             
-
+            
         </header>
+
         <div class="info">
             <section class="box" id="sobre_s" >
-                <div class="text_stikers">
+                <!-- <div class="text_stikers">
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/snoopy%2012.gif" class="stickers">
                     <h2>SIGLA BOY</h2>
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/garfield%2029.gif" class="stickers">
-                </div>
+                </div> -->
+            <!-- </a> -->
                 <!-- <p>
                     IDADE: 100000semens <br>
                     COR DA PELÉ: violeta purpura <br>
@@ -74,11 +92,13 @@
                     Qual sua prenteção salarial(pergunta eliminatoria)? sec(x0)*510 R$<br>  
         
                 </p> -->
-                <p>QUAL A SUA REALÇAO A ESSE SITE:</p>
+                <p>davi brito está de volta</p>
+                <!-- <p>QUAL A SUA REAÇAO A ESSE SITE:</p>
+                <p>ápos muitas</p>
                 <p>1-😀 2-😁 3-😂 4-🤣 5-😃 6-😄 7-😎 8-🤬 9-😡 10-😏</p>
                 <p>olha uma linha</p>
                 <hr>
-                
+                 -->
             
                 <!-- <h2>siglas boys</h2> -->
             
@@ -87,12 +107,12 @@
                 <img src= "https://bettysgraphics.neocities.org/images/plants/flower%2013.gif" class="stickers">
                 
             </section>
-            <section class="box" id="draw_s">
-                <div class="text_stikers">
+            <section class="box" id="draw_s" style="display: none;">
+                <!-- <div class="text_stikers">
                     <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers_f">
                     <h2>DESENHOS BICHAS</h2>
                     <img src= "https://bettysgraphics.neocities.org/images/objects/art%206.gif" class="stickers">
-                </div>
+                </div> -->
                 <p>São desenhos bem baitolinhas do jeito que o povo gosta🤤 <br> faço eles pelo ibis paint e as pixel arts pelo pixel studio</p>
                 <section class="gride">
                     
@@ -108,12 +128,12 @@
                     
                 </section>
             </section>
-            <section class="box" id="prog_s">
-                <div class="text_stikers">
+            <section class="box" id="prog_s" style="display: none;">
+                <!-- <div class="text_stikers">
                     <img src= "https://bettysgraphics.neocities.org/images/objects/lipstick.gif" class="stickers">
                     <h2>PROGRAMAS😘</h2>
                     <img src= "https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif" class="stickers_f">
-                </div>
+                </div> -->
                     <p>
                         Programo faz 3 anos nunca trabalhei(vagabunda), tem programa de 10 e de 20, utilozo a <br>
                         Godot, Pygame e git(imagine se não usase)
