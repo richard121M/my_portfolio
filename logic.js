@@ -1,14 +1,36 @@
-let buton_sobre = document.getElementById("sobre_b");
-var elemente_load = document.getElementById("sobre_b");
+
+// butoes area
+// ===============================================================
+let buton_sobre = document.getElementById("botao_s");
+let buton_programa = document.getElementById("botao_p");
+let buton_draw = document.getElementById("botao_d");
+
+buton_sobre.onclick = () => clicke('sobre_s');
+buton_draw.onclick = () => clicke('draw_s');
+buton_programa.onclick =() => clicke('prog_s');
+
+let buton_escode = document.querySelector(".b_esconder")
+
+buton_escode.onclick = () => esconder_header();
+
 const botoes = document.getElementsByClassName("botao");
 
 const info_instance = document.querySelector('.info');
+// ===============================================================
 
-const myObserve = new IntersectionObserver((entries)=>{
-    alert("ddd")
-});
+// AUDIO AREA
+// ===============================================================
+var audio = document.getElementById("audio_tag")
+var disco = document.getElementById("disc")
+var bar_time_music = document.querySelector('.timermusic');
 
-myObserve.observe(info_instance)
+disco.onclick = () => pause_music();
+
+audio.onended = () => pause_cd();
+audio.ontimeupdate = () => sicronizabar();
+
+bar_time_music.onchange = () => mudar_tempo();
+// ===============================================================
 
 function test(){
     alert("asasas")
@@ -37,7 +59,7 @@ function clicke(namo){
         }
         if (namo == "prog_s"){
             // mudar_texto("<div class=\"text_stikers\"><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers_f\"><h2>DESENHOS BICHAS</h2><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers\"></div>")
-            mudar_texto("<div class=\"text_stikers\"><img src= \"https://bettysgraphics.neocities.org/images/objects/lipstick.gif\" class=\"stickers\"><h2>PROGRAMAS😘</h2><img src= \"https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif\" class=\"stickers_f\"></div>")
+            mudar_texto("<div class=\"text_stikers\"><img src= \"https://bettysgraphics.neocities.org/images/objects/lipstick.gif\" class=\"stickers\"><h2>PROGRAMAS</h2><img src= \"https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif\" class=\"stickers_f\"></div>")
         }
 
         setTimeout(() => {
@@ -45,78 +67,48 @@ function clicke(namo){
         }, 150);
     }
 };
-function mostrar_tudo(){
-    var sobre_screen = document.getElementById("sobre_s")
-    var draw_screen = document.getElementById("draw_s")
-    var prog_screen = document.getElementById("prog_s")
-    
-    sobre_screen.style.display = 'none';
-    draw_screen.style.display = 'none';
-    prog_screen.style.display = 'none';
-    
-    setTimeout(() => {
-        sobre_screen.style.display = 'block';
-        draw_screen.style.display = 'block';
-        prog_screen.style.display = 'block';
-        
-        
-    }, 150); //1000
-    
-};
+
 function mudar_texto(texto){
     var titulo = document.getElementById("meuTitulo")
     // titulo.innerText = texto
     titulo.innerHTML = texto
 };
 
-function sicronizabar(){
-    // alert("sdasd")
-    audioelemente = document.getElementById("audio_tag");
-    var progressBar = document.querySelector(".timermusic")
-    const newtime_bar = audioelemente.currentTime/audioelemente.duration;
-    progressBar.value = newtime_bar*100 
+function pause_cd(){
+    disco.style.animationPlayState = 'paused';
+    
 }
 
+function sicronizabar(){
+    const newtime_bar = audio.currentTime/audio.duration;
+    bar_time_music.value = newtime_bar*100 
+}
 function mudar_tempo(){
-    
-    audioelemente = document.getElementById("audio_tag");
-    
-    // alert("dnaii")
-    var progressBar = document.querySelector(".timermusic")
-    const newtime = (progressBar.value/100)*audioelemente.duration;
-    audioelemente.currentTime = newtime 
+    const newtime = (bar_time_music.value/100)*audio.duration;
+    audio.currentTime = newtime 
 };
 
 function pause_music(){
-    // alert("funci")
-    disc = document.querySelector('.disco');
-    // disc.style.display = "none";
-    disc.id = "disc"
-    if (disc.style.animationPlayState == 'running'){
-    
-        disc.style.animationPlayState = 'paused';
+    if (disco.style.animationPlayState == 'running'){
+        disco.style.animationPlayState = 'paused';
     }else{
-        disc.style.animationPlayState = 'running';
+        disco.style.animationPlayState = 'running';
     }
-
-    audioelemente = document.getElementById("audio_tag")
-    if (audioelemente.paused){
-        // audioelemente.currentTime = 0;
-        audioelemente.play();
+    
+    if (audio.paused){
+        // audio.currentTime = 0;
+        audio.play();
     }else{
-        audioelemente.pause();
+        audio.pause();
     }
 }
 
 function esconder_header(){
-
-    header = document.getElementById("cabesario")
+    var header = document.getElementById("cabesario")
     if (header.style.display == 'none'){
         header.style.display = 'block';
     }else{
         header.style.display = 'none';
 
     }
-    // alert(header.style.display)
-    // header[0].style.display = 'block';
 }

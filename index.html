@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="logic.js" ></script>
+    <script type="module" src="logic.js" ></script>
+    <!-- <script src="logic.js" ></script> -->
     
     <title>Document</title>
 </head>
 <body>
     <section class="box_title">
         <div class="area_remove">
-            <a class="b_esconder" onclick="esconder_header()" id="prog_">≡</a>
+            <a class="b_esconder" id="prog_">≡</a>
         </div>
         <h1 id="meuTitulo">RICHALISON PLAYS</h1>
         <h1></h1>
@@ -23,13 +24,9 @@
             <section class="box">
                 <!-- <h1>RICHALISON PLAYS</h1> -->
                 <nav>
-                    <!-- <a class="botao" onclick="mostrar_tudo()" id="prog_">MOSTRAR TUDO</a> -->
-                    <a class="botao" onclick="clicke('sobre_s')">SOBRE</a>
-                    <!-- <a class="botao" onclick="mudar_texto('gay')">SOBRE</a> -->
-                    <a class="botao" onclick="clicke('draw_s')" >DESENHOS BICHAS</a>
-                    <a class="botao" onclick="clicke('prog_s')">PROGRAMAS😘</a>
-                    <!-- <a onclick="clicke('sobre_s')" id="sobre_b">LA ELE</a> -->
-                    
+                    <a class="botao" id="botao_s">SOBRE</a>
+                    <a class="botao" id="botao_d">DESENHOS BICHAS</a>
+                    <a class="botao" id="botao_p">PROGRAMAS😘</a>
                 </nav>
             </section>
             
@@ -38,8 +35,6 @@
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/snoopy%2012.gif" class="stickers">
                     <p>MANUTENCAO</p>
                     <img src= "https://bettysgraphics.neocities.org/images/characters%20and%20people/garfield%2029.gif" class="stickers">
-                    <!-- <a href="https://info.flagcounter.com/LCVD">site</a> -->
-                    <!-- <img src="https://s01.flagcounter.com/map/LCVD/size_s/txt_000000/border_CCCCCC/pageviews_0/viewers_0/flags_0/" alt="Flag Counter" border="0"> -->
                 </div> 
             </section>
             <section class="box">
@@ -47,13 +42,12 @@
                 <br><br>
                 musica do gato de miguel
                 <div class="music_local">
-                    <!-- <button id="playPauseB" onclick="pause_music()">▶</button> -->
-                    <!-- <input type="range" ontimeupdate="atulizar_tempomusic()" id="rang_music"></input> -->
-                    <audio id="audio_tag" ontimeupdate="sicronizabar()" src="https://cdn1.suno.ai/0b7b3e37-d042-4edc-aed6-1cd386d797b9.mp3" >sss</audio>
-                    <!-- <img src="https://pbs.twimg.com/media/GpBK02JWsAA0z01?format=jpg&name=4096x4096" alt="" class="disco" id="disc_pausa"> -->
-                    <img src="https://pbs.twimg.com/media/GJzgjpBXMAA1X5X?format=jpg&name=small" onclick="pause_music()"  alt="" class="disco" id="disc">
                     
-                    <input type="range" min="1" max="100" value="1" class="timermusic" onchange="mudar_tempo()">
+                    <audio id="audio_tag" src="https://cdn1.suno.ai/0b7b3e37-d042-4edc-aed6-1cd386d797b9.mp3" >sss</audio>
+                    <!-- <img src="https://pbs.twimg.com/media/GpBK02JWsAA0z01?format=jpg&name=4096x4096" alt="" class="disco" id="disc_pausa"> -->
+                    <img src="https://pbs.twimg.com/media/GJzgjpBXMAA1X5X?format=jpg&name=small"  alt="" class="disco" id="disc">
+                    
+                    <input type="range" min="1" max="100" value="1" class="timermusic" >
                     
                 </div>
             </section>
@@ -137,8 +131,6 @@
                     <p>
                         Programo faz 3 anos nunca trabalhei(vagabunda), tem programa de 10 e de 20, utilozo a <br>
                         Godot, Pygame e git(imagine se não usase)
-
-                        
 
                     </p>
 
