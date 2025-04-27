@@ -5,6 +5,7 @@ let buton_sobre = document.getElementById("botao_s");
 let buton_programa = document.getElementById("botao_p");
 let buton_draw = document.getElementById("botao_d");
 
+
 buton_sobre.onclick = () => clicke('sobre_s');
 buton_draw.onclick = () => clicke('draw_s');
 buton_programa.onclick =() => clicke('prog_s');
@@ -20,9 +21,14 @@ const info_instance = document.querySelector('.info');
 
 // AUDIO AREA
 // ===============================================================
-var audio = document.getElementById("audio_tag")
+let linkMusic = document.getElementById("link_music");
+var audio = document.getElementById("audio_tag");
+// var audio = iframe;
+
 var disco = document.getElementById("disc")
 var bar_time_music = document.querySelector('.timermusic');
+
+linkMusic.onclick = () => mudar_musica();
 
 disco.onclick = () => pause_music();
 
@@ -32,9 +38,20 @@ audio.ontimeupdate = () => sicronizabar();
 bar_time_music.onchange = () => mudar_tempo();
 // ===============================================================
 
+// GAME ZONE
+let screenGame = document.getElementById("game_drop");
+let buton_game = document.getElementById("botao_game");
+
+buton_game.onclick = () => iniciar_jogo();
+
 function test(){
     alert("asasas")
 };
+
+function mudar_musica(){
+    // linkMusic.value
+    // audio.src = linkMusic.value
+}
 
 function clicke(namo){
 
@@ -50,15 +67,12 @@ function clicke(namo){
         document.getElementById(namo).style.display = 'none';
     }else{
         if (namo == "sobre_s"){
-            // mudar_texto("SOBRE")
             mudar_texto("<div class=\"text_stikers\"><img src= \"https://bettysgraphics.neocities.org/images/characters%20and%20people/snoopy%2012.gif\" class=\"stickers\"><h2>SOBRE</h2><img src= \"https://bettysgraphics.neocities.org/images/characters%20and%20people/garfield%2029.gif\" class=\"stickers\"></div>")
         }
         if (namo == "draw_s"){
-            // mudar_texto("DESENHOS")
             mudar_texto("<div class=\"text_stikers\"><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers_f\"><h2>DESENHOS BICHAS</h2><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers\"></div>")
         }
         if (namo == "prog_s"){
-            // mudar_texto("<div class=\"text_stikers\"><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers_f\"><h2>DESENHOS BICHAS</h2><img src=\"https://bettysgraphics.neocities.org/images/objects/art%206.gif\"class=\"stickers\"></div>")
             mudar_texto("<div class=\"text_stikers\"><img src= \"https://bettysgraphics.neocities.org/images/objects/lipstick.gif\" class=\"stickers\"><h2>PROGRAMAS</h2><img src= \"https://bettysgraphics.neocities.org/images/web%20graphics/email%20120.gif\" class=\"stickers_f\"></div>")
         }
 
@@ -70,7 +84,6 @@ function clicke(namo){
 
 function mudar_texto(texto){
     var titulo = document.getElementById("meuTitulo")
-    // titulo.innerText = texto
     titulo.innerHTML = texto
 };
 
@@ -96,8 +109,9 @@ function pause_music(){
     }
     
     if (audio.paused){
-        // audio.currentTime = 0;
+        // audio.playVideo();
         audio.play();
+        // audio.setAttribute('src', iframe.getAttribute('src') + '?autoplay=1'); 
     }else{
         audio.pause();
     }
@@ -106,9 +120,22 @@ function pause_music(){
 function esconder_header(){
     var header = document.getElementById("cabesario")
     if (header.style.display == 'none'){
+        header.style.animation= "nav_apper 0.18s linear "
         header.style.display = 'block';
     }else{
-        header.style.display = 'none';
-
+        header.style.animation= "nav_apper_rev 0.18s linear "
+        setTimeout(() => {
+            header.style.display = 'none';
+        }, 170);
+    }
+}
+var hasGame = false
+function iniciar_jogo(){
+    if (hasGame == false){
+        hasGame = true
+        screenGame.src = "https://html-classic.itch.zone/html/12365465/ShadowKittyWeb/index.html"
+    }else{
+        hasGame = false
+        screenGame.src = ""
     }
 }
