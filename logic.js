@@ -126,9 +126,7 @@ function esconder_header(){
         header.style.animation= "nav_apper_rev 0.18s linear "
         setTimeout(() => {
             header.style.display = 'none';
-
-}, 185);
-
+        }, 185);
     }
 }
 var hasGame = false

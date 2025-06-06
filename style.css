@@ -25,18 +25,14 @@
 
 body, html {
     overflow-x: hidden !important;
-
     /* overflow-y: hidden !important; */
-
     }
     
     
 @media (max-height: 400px){ 
     body, html {
         overflow-x: hidden!important;
-
         /* overflow-y: scroll !important; */
-
     }
 } 
 
@@ -47,11 +43,9 @@ body, html {
     box-sizing: border-box;
 }
 body{    
-
     /* display: flex; */
     padding-top: 60px;
     
-
     text-align: center;
     font-size: 1.35vw;
     color: var(--color_text);
@@ -183,7 +177,6 @@ nav {
 }
 
 header{
-
     position: fixed;
     z-index: 2;
     
@@ -191,7 +184,6 @@ header{
     left: 0;
     width: 19vw;
     height: 88vh;
-
     margin-left:1vw ;
     margin-right:-3.5vw ;
     display: flex;
@@ -209,11 +201,9 @@ header{
     width: 100%;
 }
 header .box{
-
     box-shadow: 0px 0px 2px 2px var(--color_shadowbox);
     /* box-shadow: -5px 5px 5px 2px var(--color_shadowbox); */
     /* border: solid seashell ; */
-
     margin: 1.5vh 0vh 0vw 0vh;
     padding: 1vh 0.5vw;
 }
@@ -231,9 +221,7 @@ audio{
     left: 0;
     width: 100%;
     box-shadow: 0px 1.2vh var(--color_shadowbox);
-
     margin: 0vh 0vw 0vh 0vw;
-
     padding: 1vh 1vw;
     background-color: var(--color_box);
     border-radius: 0px;
@@ -266,13 +254,10 @@ audio{
     /* animation: rodar 12s linear infinite; */
 }
 .snake{
-
-
     width: 100%;
     height: 288px;
 }
 .info{
-
     /* position:-webkit-sticky; */
     /* overflow-y: auto; */
     padding-bottom: 100px;
@@ -283,7 +268,6 @@ audio{
     height: 89vh;
 }
 ::-webkit-scrollbar{    
-
     background-color: var(--color_shadowbox);
     border-radius: 10px;
     /* border: solid var(--color_box); */
@@ -297,7 +281,6 @@ audio{
     /* margin-left: 200vw; */
     /* width: 12px; */
 }
-
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
     height: 10px;
@@ -310,7 +293,6 @@ audio{
 }
 .box {
     padding: 2vh 1vw;
-
     box-shadow: 0px 1.2vh var(--color_shadowbox);
     background-color: var(--color_box);
     /* background-image: linear-gradient(); */
@@ -375,19 +357,15 @@ input[type="range"] {
   }
 
 .info .box{
-
     margin: 4vh 4vw 4vh 4vw;
     /* border: solid; */
-
     animation: aparecer 0.25s linear;
 }
 
 
 .main_box{
     margin: 1vh 0.5vw;
-
     /* border: solid; */
-
     display: flex;
 }
 @media all and (max-width: 650px){
