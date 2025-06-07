@@ -28,19 +28,65 @@ var audio = document.getElementById("audio_tag");
 var disco = document.getElementById("disc")
 var bar_time_music = document.querySelector('.timermusic');
 
-linkMusic.onclick = () => mudar_musica();
+// linkMusic.onclick = () => mudar_musica();
 
-disco.onclick = () => pause_music();
+// disco.onclick = () => pause_music();
+disco.onclick = () => carregarVideo();
+
 
 audio.onended = () => pause_cd();
 audio.ontimeupdate = () => sicronizabar();
 
 bar_time_music.onchange = () => mudar_tempo();
+
+
+// Carrega a API do YouTube
+var link_str = ""
+// carregarVideo()
+function carregarVideo() {
+    mudar_musica()
+    if (link_str == ""){
+        disco.style.animationPlayState = 'paused';
+    }else{
+        disco.style.animationPlayState = 'running';
+    }
+
+    document.getElementById("player").innerHTML = `
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/${link_str}?autoplay=1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    `;
+}
+
 // ===============================================================
 
 // GAME ZONE
 let screenGame = document.getElementById("game_drop");
 let buton_game = document.getElementById("botao_game");
+
+let b_FM = document.getElementById("fastmouse");
+let b_SK = document.getElementById("shadowkitty");
+let b_RC = document.getElementById("robob2");
+
+b_FM.onclick = () => cc_FM();
+b_RC.onclick = () => cc_RC();
+b_SK.onclick = () => cc_SK();
+
+var link_game = "" 
+function cc_FM(){
+    link_game = "https://html-classic.itch.zone/html/9796414/fast_html/index.html"
+};
+function cc_RC(){
+    link_game = "https://html-classic.itch.zone/html/10635461/robob2/index.html"
+};
+function cc_SK(){
+    link_game = "https://html-classic.itch.zone/html/12365465/ShadowKittyWeb/index.html"
+};
 
 buton_game.onclick = () => iniciar_jogo();
 
@@ -49,8 +95,17 @@ function test(){
 };
 
 function mudar_musica(){
-    // linkMusic.value
-    // audio.src = linkMusic.value
+    var tradu_link = linkMusic.value 
+    if (tradu_link.includes("youtube.com/watch?")){
+        tradu_link = tradu_link.slice(32,43)
+    }else{
+        tradu_link = tradu_link.slice(17,28)
+    }
+    if (tradu_link != ""){
+        disco.src = `https://i.ytimg.com/vi/${tradu_link}/hqdefault.jpg`
+
+    }
+    link_str = tradu_link
 }
 
 function clicke(namo){
@@ -133,7 +188,7 @@ var hasGame = false
 function iniciar_jogo(){
     if (hasGame == false){
         hasGame = true
-        screenGame.src = "https://html-classic.itch.zone/html/12365465/ShadowKittyWeb/index.html"
+        screenGame.src = link_game
     }else{
         hasGame = false
         screenGame.src = ""

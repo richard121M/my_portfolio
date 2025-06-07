@@ -44,7 +44,6 @@ body, html {
 }
 body{    
     /* display: flex; */
-    padding-top: 60px;
     
     text-align: center;
     font-size: 1.35vw;
@@ -95,11 +94,10 @@ body{
 h1, p, h2{
     cursor:context-menu;
 }
-header, .box_title{
-    display: flex;
+
+#cabesario{
+    margin-top: -6px;
 }
-
-
 img{
     /* animation: rodar 5s infinite; */
     width: 100%;
@@ -146,15 +144,28 @@ input[type="range"]{
     color: inherit;
     text-decoration: none;
 }
-
+p{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    word-wrap: break-word;     /* Quebra palavras longas */
+    overflow-wrap: break-word; /* Alternativa mais moderna */
+    white-space: normal;   
+}
 .botao:hover{
     cursor: pointer;
     transition: 0.0s;
     box-shadow: 0.0vh 0.5vh var(--color_shadowbutton);
     transform: scale(1.0,0.90) translateY(-0.2vh);
 }
-
+.area_remove{
+    display: flex;
+    align-items: start;
+}
 .b_esconder{
+    position: fixed;
+    top: 1.5%;
+    left: 1.5%;
     text-align:center;
     padding: 5px 15px 5px 18px;
     font-size: 4vh;
@@ -179,7 +190,6 @@ nav {
 header{
     position: fixed;
     z-index: 2;
-    
     top: 70px;
     left: 0;
     width: 19vw;
@@ -190,15 +200,46 @@ header{
     flex-direction: column;
 }
 .game_zone{
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 1vh 1vw 1vh 2vw;
-    width: 95%;
-    border: solid;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+#tvmc{
+    /* border: solid ; */
+    /* visibility: hidden; */
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+    position:relative;
+    
 }
 #game_drop{
-    height: 500px;
-    width: 100%;
+    position: absolute;
+    top: 13.5%;    /* ajuste fino para encaixar no buraco da TV */
+    left: 15%;
+    width: 70%; 
+    height: 47.5%;
+    object-fit: cover;
+    z-index: 0;
+    background-color: #201E43;
+
+}
+.b_cartucho{
+    cursor: pointer;
+    color: #E2E2B6;
+    margin: 20px;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: #508C9B;
+    text-decoration: none;
+}
+.b_cartucho:hover{
+    cursor: pointer;
+    transition: 0.0s;
+    box-shadow: 0.0vh 0.4vh var(--color_shadowbutton);
+    transform: scale(1.0,0.90) translateY(-0.10vh);
 }
 header .box{
     box-shadow: 0px 0px 2px 2px var(--color_shadowbox);
@@ -215,26 +256,15 @@ audio{
 }
 
 .box_title{
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0px 1.2vh var(--color_shadowbox);
-    margin: 0vh 0vw 0vh 0vw;
-    padding: 1vh 1vw;
-    background-color: var(--color_box);
-    border-radius: 0px;
     display: flex;
-    height: 9vh;
-    /* justify-content: flex-end; */
+    box-shadow: 0px 1.2vh var(--color_shadowbox);
+    background-color: var(--color_box);
+    padding-top: 6px;
+    padding-bottom: 3px;
     align-items:center;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
-/* .box_title .box{
-    border-radius: 0px 10xp 0px 10px;
-} */
+
 .disco{
     cursor:grab;
     width: 22vh;
@@ -258,20 +288,13 @@ audio{
     height: 288px;
 }
 .info{
-    /* position:-webkit-sticky; */
-    /* overflow-y: auto; */
-    padding-bottom: 100px;
-    position: absolute;
+    padding:0vw 12vw 100px 12vw;
     margin: 0vh 0vw;
-    /* border: solid; */
-    width: 98vw;
-    height: 89vh;
+    width: 100vw;
 }
 ::-webkit-scrollbar{    
     background-color: var(--color_shadowbox);
     border-radius: 10px;
-    /* border: solid var(--color_box); */
-    /* margin-left: 200vw; */
     width: 12px;
 }
 ::-webkit-scrollbar-track{    
@@ -293,6 +316,7 @@ audio{
 }
 .box {
     padding: 2vh 1vw;
+
     box-shadow: 0px 1.2vh var(--color_shadowbox);
     background-color: var(--color_box);
     /* background-image: linear-gradient(); */
@@ -357,21 +381,12 @@ input[type="range"] {
   }
 
 .info .box{
-    margin: 4vh 4vw 4vh 4vw;
+    margin: 4vh 0vw;
     /* border: solid; */
     animation: aparecer 0.25s linear;
 }
 
-
-.main_box{
-    margin: 1vh 0.5vw;
-    /* border: solid; */
-    display: flex;
-}
 @media all and (max-width: 650px){
-    .main_box{
-        display: block;
-    }
     header{
         width: 100%;
         display: flex;
@@ -382,7 +397,6 @@ input[type="range"] {
 
 .text_stikers{
     display: flex;
-    flex-wrap: wrap;
     margin-top: -0.5vh;
     flex-direction:row;
     justify-content: center;
